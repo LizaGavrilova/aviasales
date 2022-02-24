@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+  background: #F3F7FA;
+  min-height: 100vh;
+  padding: 50px 0;
+  margin: 0;
+
+  font-family: 'Open Sans', sans-serif;
+}
+
+.app {
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+  "header header"
+  "filter main";
+  grid-template-rows: 90px 1fr;
+  grid-template-columns: 0.5fr 1fr;
+
+  max-width: 754px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
