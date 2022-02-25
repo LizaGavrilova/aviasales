@@ -6,65 +6,73 @@ export default function Filter() {
   return (
     <div className={classes.filter}>
       <div className={classes.title}>КОЛИЧЕСТВО ПЕРЕСАДОК</div>
-      <div className={classes['.filter-item']}>
-        <input
-          type="checkbox"
-          id='all'
-          name='all'
-          className={classes.input}        
-        />
-        <label htmlFor='all' className={classes.label}>
-          Все
-        </label>
-      </div>
+      <ul>
+        <li className={classes['filter-item']}>
+          <label htmlFor='all' className={classes.label}>
+            <input
+              type="checkbox"
+              id='all'
+              name='all'
+              className={classes.input}        
+            />
+            <span className={classes['check-box']} />
+              Все
+          </label>
+        </li>
 
-      <div className={classes['.filter-item']}>
-        <input
-          type="checkbox"
-          id='no_transfer'
-          name='no_transfer'
-          className={classes.input}        
-        />
-        <label htmlFor='no_transfer' className={classes.label}>
-          Без пересадок
-        </label>
-      </div>
+        <li className={classes['filter-item']}>
+          <label htmlFor='no_transfer' className={classes.label}>
+            <input
+              type="checkbox"
+              id='no_transfer'
+              name='no_transfer'
+              checked
+              className={classes.input}        
+            />
+            <span className={classes['check-box']} />
+              Без пересадок
+          </label>
+        </li>
 
-      <div className={classes['.filter-item']}>
-        <input
-          type="checkbox"
-          id='one_transfer'
-          name='one_transfer'
-          className={classes.input}        
-        />
-        <label htmlFor='one_transfer' className={classes.label}>
-          1 пересадка
-        </label>
-      </div>
+        <li className={classes['filter-item']}>
+          <label htmlFor='one_transfer' className={classes.label}>
+            <input
+              type="checkbox"
+              id='one_transfer'
+              name='one_transfer'
+              className={classes.input}        
+            />
+            <span className={classes['check-box']} />
+              1 пересадка
+          </label>
+        </li>
 
-      <div className={classes['.filter-item']}>
-        <input
-          type="checkbox"
-          id='two_transfer'
-          name='two_transfer'
-          className={classes.input}        
-        />
-        <label htmlFor='two_transfer' className={classes.label}>
-          2 пересадки
-        </label>
-      </div>
+        <li className={classes['filter-item']}>
+          <label htmlFor='two_transfer' className={classes.label}>
+            <input
+              type="checkbox"
+              id='two_transfer'
+              name='two_transfer'
+              className={classes.input}        
+            />
+            <span className={classes['check-box']} />
+              2 пересадки
+          </label>
+        </li>
 
-      <div className={classes['.filter-item']}>
-        <input
-          type="checkbox"
-          id='three_transfer'
-          name='three_transfer'
-          className={classes.input}        
-        />
-        <label htmlFor='three_transfer' className={classes.label}>
-          3 пересадки
-        </label>
-      </div>
+        <li className={classes['filter-item']}>
+          <label htmlFor='three_transfer' className={classes.label}>
+            <input
+              type="checkbox"
+              id='three_transfer'
+              name='three_transfer'
+              className={classes.input}        
+            />
+            <span className={classes['check-box']} />
+              3 пересадки
+          </label>
+        </li>
+      </ul>
     </div>
   )
 };

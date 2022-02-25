@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
 body {
   background: #F3F7FA;
   min-height: 100vh;
-  padding: 50px 0;
+  min-width: 400px;
   margin: 0;
 
   font-family: 'Open Sans', sans-serif;
@@ -16,9 +16,16 @@ body {
   "header header"
   "filter main";
   grid-template-rows: 90px 1fr;
-  grid-template-columns: 0.5fr 1fr;
+  grid-template-columns: 1fr 2fr;
 
   max-width: 754px;
-  margin: 0 auto;
+  margin: 50px auto;
   padding: 0 20px;
+
+  @media (max-width: 560px) {
+    grid-template-areas:
+    "header header"
+    "filter filter"
+    "main main";
+}
 }
