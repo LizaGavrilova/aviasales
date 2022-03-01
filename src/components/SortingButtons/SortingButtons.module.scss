@@ -47,9 +47,8 @@
   border-left: none;
 }
 
-.button:hover, .button:focus {
+.button:hover, .button:focus, .active {
   cursor: pointer;
   background: #2196F3;
-  border-color: #2196F3;
   color: white;
 }
