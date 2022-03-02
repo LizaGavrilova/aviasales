@@ -14,6 +14,7 @@
     "jest": true
   },
   "rules": {
+    "react/forbid-prop-types": 0,
     "no-param-reassign": 0,
     "func-names": 0,
     "default-param-last": "off",

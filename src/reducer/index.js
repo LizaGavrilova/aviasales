@@ -10,7 +10,11 @@ const initialState = {
     {name: 'inexpensive', label: 'САМЫЙ ДЕШЕВЫЙ', isActive: true},
     {name: 'quick', label: 'САМЫЙ БЫСТРЫЙ', isActive: false},
     {name: 'optimal', label: 'ОПТИМАЛЬНЫЙ', isActive: false}
-  ]
+  ],
+  searchId: '',
+  tickets: [],
+  isStop: false
+
 };
 
 const reducer = (state = initialState, action) => {
@@ -25,6 +29,24 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         filterItems: action.payload
+      }
+    
+    case 'UPDATE_SEARCH_ID':
+      return {
+        ...state,
+        searchId: action.payload
+      }
+    
+    case 'UPDATE_TICKETS':
+      return {
+        ...state,
+        tickets: action.payload
+      }
+    
+    case 'TOGGLE_STOP':
+      return {
+        ...state,
+        isStop: action.payload
       }
 
     default:
