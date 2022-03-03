@@ -13,8 +13,8 @@ const initialState = {
   ],
   searchId: '',
   tickets: [],
-  isStop: false
-
+  isStop: false,
+  error: false
 };
 
 const reducer = (state = initialState, action) => {
@@ -40,13 +40,19 @@ const reducer = (state = initialState, action) => {
     case 'UPDATE_TICKETS':
       return {
         ...state,
-        tickets: action.payload
+        tickets: [...state.tickets, ...action.payload] 
       }
     
     case 'TOGGLE_STOP':
       return {
         ...state,
         isStop: action.payload
+      }
+
+    case 'TOGGLE_ERROR':
+      return {
+        ...state,
+        error: action.payload
       }
 
     default:

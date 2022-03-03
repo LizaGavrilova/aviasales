@@ -1,25 +1,22 @@
-class ApiService {
-  apiBase = 'https://aviasales-test-api.java-mentor.com/';
+import axios from 'axios';
 
-  async getResource(url) {
-    const res = await fetch(`${this.apiBase}${url}`);
-    if (!res.ok) {
-      throw new Error(`Could not fetch ${url}, received ${res.status}`);
-    }
-    const body = await res.json();
-    return body;
-  };
+const getId = async () => {
+  const { data } = await axios.get(
+    'https://aviasales-test-api.java-mentor.com/search'
+  );
+  return data;
 
-  async getId() {
-    const res = await this.getResource(`search`);
-    return res.searchId;
-  };
-
-  async getTickets(searchId) {
-    const res = await this.getResource(`tickets?searchId=${searchId}`);
-    return res;
-  }
 };
 
-const apiService = new ApiService();
-export default apiService;
+const getTickets = async (searchId) => {
+  const { data } = await axios.get(
+    `https://aviasales-test-api.java-mentor.com/tickets?searchId=${searchId}`
+
+  );
+  return data;
+}
+
+export {
+  getId,
+  getTickets
+};

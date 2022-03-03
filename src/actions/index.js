@@ -1,4 +1,4 @@
-import apiService from '../services/ApiService';
+import { getId, getTickets } from '../services/ApiService';
 
 const updateSortButtons = (newSortButtons) => ({
   type: 'UPDATE_SORT_BUTTONS',
@@ -25,16 +25,51 @@ const toggleStop = (value) => ({
   payload: value
 });
 
-const getTickets = (searchId) => ((dispatch) => {
-    apiService.getTickets(searchId)
-      .then((res) => {
-        dispatch(updateTickets(res.tickets));
-        if (res.stop) {
-          dispatch(toggleStop(res.stop));
-        };
-      })
+const toggleError = (value) => ({
+  type: 'TOGGLE_ERROR',
+  payload: value
+});
+
+const getTicketsData = () => async (dispatch) => {
+  const { searchId } = await getId();
+  dispatch(updateSearchId(searchId));
+  let ticketsData;
+  let status = false;
+
+  try {
+    const { tickets, stop } = await getTickets(searchId);
+    ticketsData = tickets;
+    status = stop;  
+  } catch {
+    const { tickets, stop } = await getTickets(searchId);
+    ticketsData = tickets;
+    status = stop;
   }
-);
+  dispatch(updateTickets(ticketsData));
+  if (status) {
+    dispatch(toggleStop(status));
+  }  
+};
+
+const loadNewTickets = (searchId) => async (dispatch) => {
+  let ticketsData;
+  let status; 
+  
+  try {
+    const { tickets, stop } = await getTickets(searchId);
+    ticketsData = tickets;
+    status = stop;  
+  } catch {
+    const { tickets, stop } = await getTickets(searchId);
+    ticketsData = tickets;
+    status = stop;
+  }
+
+  dispatch(updateTickets(ticketsData));
+  if (status) {
+    dispatch(toggleStop(status));
+  }
+}
 
 export {
   updateSortButtons,
@@ -42,5 +77,7 @@ export {
   updateSearchId,
   updateTickets,
   toggleStop,
-  getTickets
+  toggleError,
+  getTicketsData,
+  loadNewTickets
 };

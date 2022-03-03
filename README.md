@@ -1,1 +1,1 @@
-https://aviasales-delta-eight.vercel.app
+https://aviasales-glizagavrilova-yandexru.vercel.app

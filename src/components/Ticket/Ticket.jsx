@@ -32,8 +32,39 @@ function Ticket(props) {
   };
 
   // Время в пути 
+  const timeTravel = (duration) => {
+    const hours = Math.floor(duration / 60);
+    const minutes = duration % 60;
+    
+    return (
+      `${(hours > 9) ? hours : `0${hours}`}ч ${(minutes > 10) ? minutes : `0${minutes}`}м`
+    )
+  };
 
-  
+  // Время вылета-прилета
+  const timeDepartureArrival = (date, duration) => {
+    const hoursDeparture = new Date(date).getHours();
+    const minDeparture = new Date(date).getMinutes();
+
+    let hoursArrival = hoursDeparture + Math.floor(duration / 60);
+    let minArrival = minDeparture + duration % 60;
+
+    if (hoursArrival > 24) {
+      hoursArrival -= 24;
+    };
+    if (minArrival > 59) {
+      hoursArrival += 1;
+      minArrival -= 60;
+    }
+    const hoursDepartureStr = (hoursDeparture > 9) ? hoursDeparture : `0${hoursDeparture}`;
+    const minDepartureStr = (minDeparture > 10) ? minDeparture : `0${minDeparture}`;
+    const hoursArrivalStr = (hoursArrival > 9) ? hoursArrival : `0${hoursArrival}`;
+    const minArrivalStr = (minArrival > 10) ? minArrival : `0${minArrival}`;
+
+    return (
+      `${hoursDepartureStr}:${minDepartureStr} - ${hoursArrivalStr}:${minArrivalStr}`
+    )    
+  };  
 
   return (
     <div className={classes.ticket}>
@@ -49,8 +80,8 @@ function Ticket(props) {
             <div className={classes['gray-text']}>В ПУТИ</div>
             <div className={classes['gray-text']}>{(item.stops.length) ? item.stops.length : 'БЕЗ'} {transferToStr(item.stops.length)}</div>
 
-            <div className={classes.text}>10:45-08:00</div>
-            <div className={classes.text}>21ч 15м</div>
+            <div className={classes.text}>{timeDepartureArrival(item.date, item.duration)}</div>
+            <div className={classes.text}>{timeTravel(item.duration)}</div>
             <div className={classes.text}>{item.stops.join(', ')}</div>
           </div>
         ))

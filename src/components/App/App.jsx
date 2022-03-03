@@ -1,43 +1,35 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
-import apiService from '../../services/ApiService';
 
 import { Header } from '../Header';
 import { Filter } from '../Filter';
 import { Main } from '../Main';
 
-import { getTickets, updateSearchId } from '../../actions';
+import { getTicketsData, loadNewTickets } from '../../actions';
 
 import classes from './App.module.scss';
 
-class App extends Component {
-  componentDidMount() {
-    const {getTicketsArr, updateSearchID} = this.props;
-    apiService.getId()
-    .then((res) => {
-      updateSearchID(res);
-      getTicketsArr(res);
-    });
-  }
-  
-  componentDidUpdate(prevProps) {
-    const {searchId, tickets, isStop, getTicketsArr} = this.props;
-    if(!isStop && prevProps.tickets !== tickets) {
-      getTicketsArr(searchId);
-    }
-  }
+function App(props) {
+  const { searchId, isStop, getTicketsArr, addNewTickets} = props; 
 
-  render() {
-    return (
-      <div className={classes.app}>
+  useEffect(() => {
+    getTicketsArr();   
+  }, [getTicketsArr]);
+
+  useEffect(() => {
+    if (searchId && !isStop) {
+      addNewTickets(searchId)
+    };
+  });
+
+  return (
+    <div className={classes.app}>
       <Header />
       <Filter />
       <Main />
     </div>
-    )    
-  }
+  )
 };
 
 const mapStateToProps = function (state) {
@@ -50,25 +42,23 @@ const mapStateToProps = function (state) {
 
 const mapDispatchToProps = function (dispatch) {
   return {
-    getTicketsArr: (searchId) => dispatch(getTickets(searchId)),
-    updateSearchID: (searchId) => dispatch(updateSearchId(searchId))
+    getTicketsArr: (searchId) => dispatch(getTicketsData(searchId)),
+    addNewTickets: (searchId) => dispatch(loadNewTickets(searchId))
   }
 };
 
 App.defaultProps = {
   searchId: '',
-  tickets: [],
   isStop: false,
   getTicketsArr: () => {},
-  updateSearchID: () => {}
+  addNewTickets: () => {}
 };
 
 App.propTypes = {
   searchId: PropTypes.string,
-  tickets: PropTypes.arrayOf(PropTypes.object),
   isStop: PropTypes.bool,
   getTicketsArr: PropTypes.func,
-  updateSearchID: PropTypes.func
+  addNewTickets: PropTypes.func
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
