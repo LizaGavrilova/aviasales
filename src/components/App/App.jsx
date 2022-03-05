@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { Header } from '../Header';
+import { Loader } from '../Loader';
 import { Filter } from '../Filter';
 import { Main } from '../Main';
 
@@ -26,6 +27,7 @@ function App(props) {
   return (
     <div className={classes.app}>
       <Header />
+      <Loader />
       <Filter />
       <Main />
     </div>

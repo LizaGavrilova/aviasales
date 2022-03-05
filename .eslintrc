@@ -14,6 +14,8 @@
     "jest": true
   },
   "rules": {
+    "array-callback-return": 0,
+    "consistent-return": 0,
     "react/forbid-prop-types": 0,
     "no-param-reassign": 0,
     "func-names": 0,
@@ -38,7 +40,7 @@
     "id-length": [
       "warn",
       {
-        "exceptions": ["i", "j"],
+        "exceptions": ["i", "j", "a", "b"],
         "min": 2
       }
     ],

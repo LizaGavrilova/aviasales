@@ -10,6 +10,10 @@ const updateFilter = (newFilterItems) => ({
   payload: newFilterItems
 });
 
+const updateTicketCount = () => ({
+  type: 'UPDATE_TICKET_COUNT'
+})
+
 const updateSearchId = (searchId) => ({
   type: 'UPDATE_SEARCH_ID',
   payload: searchId
@@ -58,7 +62,7 @@ const loadNewTickets = (searchId) => async (dispatch) => {
   try {
     const { tickets, stop } = await getTickets(searchId);
     ticketsData = tickets;
-    status = stop;  
+    status = stop;    
   } catch {
     const { tickets, stop } = await getTickets(searchId);
     ticketsData = tickets;
@@ -74,6 +78,7 @@ const loadNewTickets = (searchId) => async (dispatch) => {
 export {
   updateSortButtons,
   updateFilter,
+  updateTicketCount,
   updateSearchId,
   updateTickets,
   toggleStop,

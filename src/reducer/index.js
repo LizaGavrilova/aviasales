@@ -8,9 +8,9 @@ const initialState = {
   ],
   sortButtons: [
     {name: 'inexpensive', label: 'САМЫЙ ДЕШЕВЫЙ', isActive: true},
-    {name: 'quick', label: 'САМЫЙ БЫСТРЫЙ', isActive: false},
-    {name: 'optimal', label: 'ОПТИМАЛЬНЫЙ', isActive: false}
+    {name: 'quick', label: 'САМЫЙ БЫСТРЫЙ', isActive: false}
   ],
+  ticketCount: 5,
   searchId: '',
   tickets: [],
   isStop: false,
@@ -29,6 +29,12 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         filterItems: action.payload
+      }
+    
+    case 'UPDATE_TICKET_COUNT':
+      return {
+        ...state,
+        ticketCount: state.ticketCount + 5
       }
     
     case 'UPDATE_SEARCH_ID':

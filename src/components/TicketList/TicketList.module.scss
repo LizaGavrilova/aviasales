@@ -1,6 +1,7 @@
 .ticket-list {
   display: flex;
   flex-direction: column;  
+  overflow-anchor: none;
 }
 
 .button {

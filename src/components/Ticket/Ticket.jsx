@@ -90,12 +90,6 @@ function Ticket(props) {
   )
 };
 
-// const mapStateToProps = function (state) {
-//   return {
-    
-//   }
-// }
-
 Ticket.defaultProps = {
   ticket: {}
 };

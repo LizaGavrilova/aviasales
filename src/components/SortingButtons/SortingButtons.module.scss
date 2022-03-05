@@ -33,17 +33,12 @@
 .button:first-child {  
   border: 1px solid #DFE5EC;
   border-radius: 7px 0 0 7px;
+  border-right: none;
 }
 
 .button:last-child {  
   border: 1px solid #DFE5EC;
   border-radius: 0 7px 7px 0;
-}
-
-.button:nth-child(2) {  
-  border-top: 1px solid #DFE5EC;
-  border-bottom: 1px solid #DFE5EC;
-  border-right: none;
   border-left: none;
 }
 
