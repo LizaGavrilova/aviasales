@@ -11,5 +11,5 @@ export default function Main() {
       <SortingButtons />
       <TicketList />
     </div>
-  )
-};
+  );
+}

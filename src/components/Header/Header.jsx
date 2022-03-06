@@ -9,5 +9,5 @@ export default function Header() {
     <div className={classes.header}>
       <img className={classes.logo} alt="logo" src={logo} />
     </div>
-  )
-};
+  );
+}

@@ -6,7 +6,7 @@ import LoadingBar from 'react-top-loading-bar';
 import classes from './Loader.module.scss';
 
 function Loader(props) {
-  const {tickets, isStop} = props;
+  const { tickets, isStop } = props;
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -19,31 +19,26 @@ function Loader(props) {
 
   return (
     <div className={classes.loader}>
-      <LoadingBar
-        progress={count}
-        color='#2196F3'
-        shadow={false}
-        height='5px'
-      />
+      <LoadingBar progress={count} color="#2196F3" shadow={false} height="5px" />
     </div>
-  )
-};
+  );
+}
 
 const mapStateToProps = function (state) {
   return {
     tickets: state.tickets,
-    isStop: state.isStop
-  }
+    isStop: state.isStop,
+  };
 };
 
 Loader.defaultProps = {
   tickets: [],
-  isStop: false
+  isStop: false,
 };
 
 Loader.propTypes = {
   tickets: PropTypes.arrayOf(PropTypes.object),
-  isStop: PropTypes.bool
+  isStop: PropTypes.bool,
 };
 
-export default connect(mapStateToProps)(Loader)
+export default connect(mapStateToProps)(Loader);
