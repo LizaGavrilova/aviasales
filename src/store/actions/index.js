@@ -1,4 +1,4 @@
-import { getId, getTickets } from '../services/ApiService';
+import { getId, getTickets } from '../../services/ApiService';
 
 const updateSortButtons = (newSortButtons) => ({
   type: 'UPDATE_SORT_BUTTONS',

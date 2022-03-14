@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { updateSortButtons } from '../../actions';
+import { updateSortButtons } from '../../store/actions';
 import classes from './SortingButtons.module.scss';
 
 function SortingButtons(props) {

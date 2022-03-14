@@ -7,7 +7,7 @@ import { Loader } from '../Loader';
 import { Filter } from '../Filter';
 import { Main } from '../Main';
 
-import { getTicketsData, loadNewTickets } from '../../actions';
+import { getTicketsData, loadNewTickets } from '../../store/actions';
 
 import classes from './App.module.scss';
 

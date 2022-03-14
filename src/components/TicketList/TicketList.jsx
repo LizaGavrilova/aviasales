@@ -7,7 +7,7 @@ import { Ticket } from '../Ticket';
 import { ErrorMessage } from '../ErrorMessage';
 import { NotFound } from '../NotFound';
 
-import { updateTicketCount } from '../../actions';
+import { updateTicketCount } from '../../store/actions';
 
 import classes from './TicketList.module.scss';
 

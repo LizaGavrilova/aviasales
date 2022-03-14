@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { updateFilter } from '../../actions';
+import { updateFilter } from '../../store/actions';
 import classes from './Filter.module.scss';
 
 function Filter(props) {
