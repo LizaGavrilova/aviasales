@@ -7,10 +7,10 @@
 
 .unselectable {
   -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none;   /* Chrome/Safari/Opera */
-  -khtml-user-select: none;    /* Konqueror */
-  -moz-user-select: none;      /* Firefox */
-  -ms-user-select: none;       /* Internet Explorer/Edge */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
 }
 
@@ -23,27 +23,29 @@
   font-size: 12px;
   line-height: 20px;
   letter-spacing: 0.5px;
-  color: #4A4A4A;
+  color: #4a4a4a;
 
-  background: #FFFFFF;
+  background: #ffffff;
   box-sizing: border-box;
   outline: none;
 }
 
-.button:first-child {  
-  border: 1px solid #DFE5EC;
+.button:first-child {
+  border: 1px solid #dfe5ec;
   border-radius: 7px 0 0 7px;
   border-right: none;
 }
 
-.button:last-child {  
-  border: 1px solid #DFE5EC;
+.button:last-child {
+  border: 1px solid #dfe5ec;
   border-radius: 0 7px 7px 0;
   border-left: none;
 }
 
-.button:hover, .button:focus, .active {
+.button:hover,
+.button:focus,
+.active {
   cursor: pointer;
-  background: #2196F3;
+  background: #2196f3;
   color: white;
 }

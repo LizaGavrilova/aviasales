@@ -1,6 +1,6 @@
 .filter {
   grid-area: filter;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   max-height: 260px;
@@ -11,11 +11,11 @@
   font-size: 12px;
   line-height: 12px;
   letter-spacing: 0.5px;
-  color: #4A4A4A;
+  color: #4a4a4a;
   padding: 20px;
   padding-bottom: 10px;
 
-  @media (max-width: 370px){
+  @media (max-width: 370px) {
     font-size: 10px;
   }
 }
@@ -28,19 +28,19 @@ ul {
   .filter-item {
     font-size: 13px;
     line-height: 20px;
-    color: #4A4A4A;
+    color: #4a4a4a;
     padding: 10px 0 10px 20px;
     display: flex;
     align-items: center;
     cursor: pointer;
 
     &:hover {
-      background-color: #F1FCFF;
+      background-color: #f1fcff;
     }
 
     @media (max-width: 560px) {
-      &:hover{
-        background-color: #FFFFFF;      
+      &:hover {
+        background-color: #ffffff;
       }
     }
   }
@@ -48,7 +48,6 @@ ul {
   @media (max-width: 560px) {
     display: flex;
     flex-wrap: wrap;
-
   }
 
   .input {
@@ -57,32 +56,32 @@ ul {
     -moz-appearance: none;
     appearance: none;
     cursor: pointer;
-  
-    &:checked + .check-box{
+
+    &:checked + .check-box {
       background-image: url('../../image/checkbox-on.svg');
     }
   }
 
-  .check-box{
+  .check-box {
     position: absolute;
     width: 20px;
     height: 20px;
     margin-left: -30px;
     cursor: pointer;
-  
+
     background-image: url('../../image/checkbox-off.svg');
     background-repeat: no-repeat;
   }
 
   .label {
-    padding-left: 30px;  
+    padding-left: 30px;
     cursor: pointer;
 
     -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* Internet Explorer/Edge */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
   }
 }

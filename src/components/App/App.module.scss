@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
 body {
-  background: #F3F7FA;
+  background: #f3f7fa;
   min-height: 100vh;
   min-width: 400px;
   margin: 0;
@@ -13,8 +13,8 @@ body {
   display: grid;
   gap: 20px;
   grid-template-areas:
-  "header header"
-  "filter main";
+    'header header'
+    'filter main';
   grid-template-rows: 90px 1fr;
   grid-template-columns: 1fr 2fr;
 
@@ -24,8 +24,8 @@ body {
 
   @media (max-width: 560px) {
     grid-template-areas:
-    "header header"
-    "filter filter"
-    "main main";
-}
+      'header header'
+      'filter filter'
+      'main main';
+  }
 }
